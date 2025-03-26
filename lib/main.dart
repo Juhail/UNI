@@ -13,12 +13,12 @@ void main() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
-            apiKey: "Api_key",
-            authDomain: "auth_domain",
-            projectId: "project_id",
-            storageBucket: "",
-            messagingSenderId: "",
-            appId: "");
+              apiKey: "AIzaSyAsEOqTlju2jlosTakAoQQemTJ-sgc7uxw",
+            authDomain: "uni-app-6d7cf.firebaseapp.com",
+            projectId: "uni-app-6d7cf",
+            storageBucket: "uni-app-6d7cf.appspot.com",
+            messagingSenderId: "581438240819",
+            appId: "1:581438240819:web:7a1e06899c676efdb64b46"));
     print('webbb');
   } else {
     await Firebase.initializeApp();
