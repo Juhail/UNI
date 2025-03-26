@@ -45,7 +45,7 @@ class _SubsState extends State<Subs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: SingleChildScrollView(
           child: SafeArea(
             child: Column(
@@ -83,7 +83,8 @@ class _SubsState extends State<Subs> {
                                     borderRadius: BorderRadius.circular(15),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
+                                          color: Colors.grey[850]!
+                                              .withOpacity(0.5),
                                           spreadRadius: 3,
                                           blurRadius: 3,
                                           offset: const Offset(0, 3))

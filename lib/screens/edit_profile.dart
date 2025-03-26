@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uni/screens/datas.dart';
 
 class EditProfile extends StatefulWidget {
   @override
-
   _EditProfileState createState() => _EditProfileState();
 }
 
 class _EditProfileState extends State<EditProfile> {
+  var docid;
+  var _name = TextEditingController();
+
   final _age = TextEditingController();
   final _phoneNumber = TextEditingController();
   final _address = TextEditingController();
-  final _name = TextEditingController();
+
   Future addUserDetails(
       // String Name, String Age, String PhoneNumber, String Address
       ) async {
     final userDoc =
-        FirebaseFirestore.instance.collection('user details').doc(_name.text);
+        FirebaseFirestore.instance.collection('user details').doc(namem);
+    print('name:$docid');
+
     final data = {
       'Name': _name.text.trim(),
       'Age': _age.text.trim(),
@@ -28,10 +33,15 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   Widget build(BuildContext context) {
+    var namem = _name.toString();
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await addUserDetails();
+          namem = _name.text.trim();
+          // print('name:$namem');
+          print(namem);
           Navigator.pop(context, _name);
         },
         child: Text('Save'),
@@ -40,6 +50,7 @@ class _EditProfileState extends State<EditProfile> {
         centerTitle: true,
         title: Text('Edit Profile'),
       ),
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

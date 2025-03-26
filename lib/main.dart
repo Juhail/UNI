@@ -5,6 +5,7 @@ import 'package:uni/Authentication/authpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:uni/Authentication/mainpage.dart';
 import 'package:uni/Authentication/login.dart';
+import 'package:uni/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,9 +28,15 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: mainpage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const mainpage(),
+      theme: lightMode,
+      darkTheme: darkMode,
+    );
   }
 }

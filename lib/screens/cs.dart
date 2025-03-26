@@ -13,15 +13,68 @@ class _CSState extends State<CS> {
         centerTitle: true,
         title: Text('Computer Science'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Center(
-              child: Icon(
-            Icons.emoji_emotions,
-            size: 180,
-            color: Colors.yellow,
-          ))
+          Expanded(
+            flex: 1,
+            child: Container(
+              margin: EdgeInsets.all(20),
+              // width: 150,
+              // height: 150,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.background,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey[850]!.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: const Offset(0, 3))
+                  ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Materials'),
+                  Icon(
+                    Icons.document_scanner_outlined,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              margin: EdgeInsets.all(20),
+              // width: 150,
+              // height: 150,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.background,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey[850]!.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: const Offset(0, 3))
+                  ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Chat'),
+                  Icon(
+                    Icons.chat_bubble_outline_outlined,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
